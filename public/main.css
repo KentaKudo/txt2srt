@@ -1,20 +1,31 @@
 body {
   height: 100vh;
+  background: #fad0c4;
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
 }
 
 main {
   height: 100%;
-  padding: 4rem;
+  padding: 4rem 2rem;
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 1024px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 main > section {
-  height: 100%;
+  flex: 1 0 0;
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 3rem;
+}
+
+@media (max-width: 640px) {
+  main > section {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 main > section > button {
@@ -22,11 +33,19 @@ main > section > button {
 }
 
 #input {
+  height: 70ch;
+  padding: 1rem;
   flex: 1 0 0;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 #output {
+  height: 70ch;
+  padding: 1rem;
   flex: 1 0 0;
-  border: solid 1px black;
-  border-radius: 0.25rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow-y: scroll;
 }

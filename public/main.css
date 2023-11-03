@@ -1,0 +1,32 @@
+body {
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  padding: 4rem;
+  margin: 0 auto;
+  max-width: 980px;
+  width: 100%;
+}
+
+main > section {
+  height: 100%;
+  display: flex;
+  align-items: start;
+  gap: 3rem;
+}
+
+main > section > button {
+  cursor: pointer;
+}
+
+#input {
+  flex: 1 0 0;
+}
+
+#output {
+  flex: 1 0 0;
+  border: solid 1px black;
+  border-radius: 0.25rem;
+}

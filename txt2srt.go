@@ -53,7 +53,6 @@ func (c converter) convert(r io.Reader, w io.Writer) {
 		}
 
 		b.WriteString(fmt.Sprintf("%d\n", idx))
-		log.Printf("c.secondsToAdd: %d", c.secondsToAdd)
 		b.WriteString(fmt.Sprintf("%v --> %v\n", now.Format(format), now.Add(c.secondsToAdd).Format(format)))
 		b.WriteString(line)
 		b.WriteString(fmt.Sprintln())

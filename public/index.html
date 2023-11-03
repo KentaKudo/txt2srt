@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./wasm_exec.js"></script>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <script>
+      const go = new Go();
+      WebAssembly.instantiateStreaming(
+        fetch("txt2srt.wasm"),
+        go.importObject
+      ).then(({ instance }) => {
+        go.run(instance);
+      });
+
+      function convert() {
+        const inputElement = document.getElementById("input");
+        const outputElement = document.getElementById("output");
+        const output = txt2srt(inputElement.value);
+        outputElement.innerText = output;
+      }
+    </script>
+
+    <main>
+      <h1>Caption Converter</h1>
+      <section>
+        <textarea
+          id="input"
+          placeholder="Enter your caption"
+          rows="5"
+          cols="50"
+        ></textarea>
+        <button onclick="convert()">Convert</button>
+        <div id="output"></div>
+      </section>
+    </main>
+  </body>
+</html>

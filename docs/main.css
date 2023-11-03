@@ -35,7 +35,7 @@ main > section > button {
 #input {
   height: 70ch;
   padding: 1rem;
-  flex: 1 0 0;
+  width: 100%;
   border: none;
   border-radius: 0.5rem;
 }
@@ -43,9 +43,13 @@ main > section > button {
 #output {
   height: 70ch;
   padding: 1rem;
-  flex: 1 0 0;
+  width: 100%;
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   overflow-y: scroll;
+}
+
+button.download {
+  cursor: pointer;
 }

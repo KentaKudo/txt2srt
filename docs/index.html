@@ -24,6 +24,18 @@
         const output = txt2srt(inputElement.value);
         outputElement.innerText = output;
       }
+
+      function download() {
+        const outputElement = document.getElementById("output");
+        const blob = new Blob([outputElement.innerText], {
+          type: "text/plain",
+        });
+        const fileUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = "output.srt";
+        link.href = fileUrl;
+        link.click();
+      }
     </script>
 
     <main>
@@ -38,6 +50,7 @@
         <button onclick="convert()">Convert</button>
         <div id="output"></div>
       </section>
+      <button class="download" onclick="download()">Download</button>
     </main>
   </body>
 </html>
